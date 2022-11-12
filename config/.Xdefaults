@@ -1,0 +1,73 @@
+*foreground: #fff6ff
+*foreground_bold: #ffecff
+*cursor: #f3ceff
+*background:       #05080a
+!!*background: rgba(0, 0, 0, .7)
+
+!! black
+*.color0:       #0A0D0F
+*.color8:       #0f1214
+
+!! red
+*.color1:       #ff9fbc
+*.color9:       #ffa4c1
+
+!! green
+*.color2:       #baf7b5
+*.color10:      #bffcba
+
+!! yellow
+*.color3:       #ffc79b
+*.color11:      #ffcca0
+
+!! blue
+*.color4:       #b2fff3
+*.color12:      #b7fff8
+
+!! purple
+*.color5:       #dfbaff
+*.color13:      #e4bfff
+
+!! pink
+*.color6:       #ffc2df
+*.color14:      #ffc7e4
+
+!! white
+*color7:        #fff6ff
+*color15:       #fffbff
+
+URxvt.intensityStyles:	false
+URxvt.background:       [90]#000000
+URxvt.depth:		32
+URxvt.font: 		xft:monospace:size=11
+URxvt.scrollBar:	false
+URxvt.cursorColor:	white
+
+!! Extensions
+URxvt.perl-ext-common:	default,matcher,resize-font,url-select,keyboard-select
+URxvt.colorUL:		#4682B4
+!! url-select
+URxvt.keysym.M-u:	perl:url-select:select_next
+URxvt.url-select.launcher: webview
+URxvt.url-select.underline: true
+!! keyboard-select:
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+!! resize-font
+URxvt.resize-font.smaller:	C-Down
+URxvt.resize-font.bigger:	C-Up
+!! Matcher
+URxvt.url-launcher:	webview
+URxvt.matcher.button:	1
+
+rofi.color-enabled:	true
+rofi.color-window:	#000, #000, #000
+rofi.color-normal:	#111, #819396, #222, #008ed4, #ffffff
+rofi.color-active:	#002b37, #008ed4, #003643, #008ed4, #66c6ff
+rofi.color-urgent:	#002b37, #da4281, #003643, #008ed4, #890661
+
+rofi.fake-transparency:	true
+rofi.lines:		3
+rofi.bw:		0
+rofi.opacity:		"10"
+rofi.hide-scrollbar:	true
+rofi.width:		30
