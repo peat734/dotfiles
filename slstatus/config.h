@@ -65,9 +65,9 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function format          argument */
  // { vol_perc, "VOL:%2S| ",            "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
-  { run_command, "^c#ff9fbc^VOL:%2s | ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" }, 
-  { cpu_perc,    "^c#ffc79b^CPU:%2s%% | ",          "NULL" },
-  { ram_perc,    "^c#baf7b5^RAM:%2s%% | ",          "NULL" },
-  { battery_perc, "^c#b2fff3^BAT:%2s%% | ",          "BAT0" },
-  { datetime, "^c#dfbaff^%s",           "%a %d/%m/%y %R" },
+  { run_command, "^c#FF5D62^VOL:%2s | ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" }, 
+  { cpu_perc,    "^c#E6C384^CPU:%2s%% | ",          "NULL" },
+  { ram_perc,    "^c#98BB6C^RAM:%2s%% | ",          "NULL" },
+  { battery_perc, "^c#7FB4CA^BAT:%2s%% | ",          "BAT0" },
+  { datetime, "^c#957FB8^%s",           "%a %d/%m/%y %R" },
 };

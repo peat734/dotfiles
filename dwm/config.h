@@ -8,14 +8,14 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10", "fontawesome:size=12" };
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#0A0D0F";
-static const char col_gray2[]       = "#141719";
+static const char col_gray1[]       = "#1F1F28";
+static const char col_gray2[]       = "#2A2A37";
 static const char col_gray3[]       = "#0f1214";
 static const char col_gray4[]       = "#1F1F28";
 static const char col_cyan[]        = "#005577";
 static const char col_red[]         = "#e78c8c";
-static const char col_pink[]        = "#ffc2df";
-static const char col_white[]       = "#ffe1e1";
+static const char col_pink[]        = "#E46876";
+static const char col_white[]       = "#DCD7BA";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_white, col_gray1, col_gray2 },
@@ -62,7 +62,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_white, "-sb", col_pink, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "urxvt", NULL };
+//static const char *termcmd[]  = { "urxvt", NULL };
+static const char *termcmd[] = { "kitty", NULL};
 static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
 static const char *downvol[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
 
@@ -72,7 +73,8 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-    { MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("firefox")},
+    //{ MODKEY|Mod1Mask,              XK_Return, spawn,          {.v = termcmd2} },
+	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("firefox")},
     { MODKEY,                       XK_m,      spawn,          SHCMD("rofi -modi drun,run -show drun")},
     { MODKEY,                       XK_Print,  spawn,          SHCMD("flameshot gui")},	
     { ControlMask|Mod1Mask,         XK_l,      spawn,          SHCMD("slock")},
