@@ -1,0 +1,108 @@
+From 98e95cd6c50ea123b5504f52f449495a5d768a04 Mon Sep 17 00:00:00 2001
+From: slightly-seasoned <brandondp723@gmail.com>
+Date: Sat, 25 Jun 2022 16:07:41 -0230
+Subject: [PATCH] Colorful tags patch.
+
+---
+ config.def.h | 27 ++++++++++++++++++++++-----
+ dwm.c        | 16 ++++++++++++++--
+ 2 files changed, 36 insertions(+), 7 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index a2ac963..54a12c4 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -1,10 +1,12 @@
+ /* See LICENSE file for copyright and license details. */
+ 
+ /* appearance */
+-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+-static const unsigned int snap      = 32;       /* snap pixel */
+-static const int showbar            = 1;        /* 0 means no bar */
+-static const int topbar             = 1;        /* 0 means bottom bar */
++static const unsigned int borderpx    = 1;        /* border pixel of windows */
++static const unsigned int snap        = 32;       /* snap pixel */
++static const int showbar              = 1;        /* 0 means no bar */
++static const int topbar               = 1;        /* 0 means bottom bar */
++static const unsigned int colorfultag = 1;        /* 0 means use SchemeSel for
++                                                     selected tag */
+ static const char *fonts[]          = { "monospace:size=10" };
+ static const char dmenufont[]       = "monospace:size=10";
+ static const char col_gray1[]       = "#222222";
+@@ -16,10 +18,25 @@ static const char *colors[][3]      = {
+ 	/*               fg         bg         border   */
+ 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+ 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
++
++    [SchemeTag]  = { col_gray3, col_gray1, NULL }, /* Inactive tag. */
++    [SchemeTag1] = { col_gray4, col_cyan,  NULL },
++    [SchemeTag2] = { col_gray4, col_cyan,  NULL },
++    [SchemeTag3] = { col_gray4, col_cyan,  NULL },
++    [SchemeTag4] = { col_gray4, col_cyan,  NULL },
++    [SchemeTag5] = { col_gray4, col_cyan,  NULL },
++    [SchemeTag6] = { col_gray4, col_cyan,  NULL },
++    [SchemeTag7] = { col_gray4, col_cyan,  NULL },
++    [SchemeTag8] = { col_gray4, col_cyan,  NULL },
++    [SchemeTag9] = { col_gray4, col_cyan,  NULL },
++    /* And so forth... */
+ };
+ 
+ /* tagging */
+-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
++static const char *tags[]      = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
++static const int  tagschemes[] = { SchemeTag1, SchemeTag2, SchemeTag3,
++                                   SchemeTag4, SchemeTag5, SchemeTag6,
++                                   SchemeTag7, SchemeTag8, SchemeTag9 };
+ 
+ static const Rule rules[] = {
+ 	/* xprop(1):
+diff --git a/dwm.c b/dwm.c
+index 5646a5c..c21b11e 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -59,7 +59,10 @@
+ 
+ /* enums */
+ enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
+-enum { SchemeNorm, SchemeSel }; /* color schemes */
++enum { SchemeNorm, SchemeSel,  SchemeTag,
++       SchemeTag1, SchemeTag2, SchemeTag3,
++       SchemeTag4, SchemeTag5, SchemeTag6,
++       SchemeTag7, SchemeTag8, SchemeTag9 }; /* color schemes */
+ enum { NetSupported, NetWMName, NetWMState, NetWMCheck,
+        NetWMFullscreen, NetActiveWindow, NetWMWindowType,
+        NetWMWindowTypeDialog, NetClientList, NetLast }; /* EWMH atoms */
+@@ -122,6 +125,7 @@ struct Monitor {
+ 	unsigned int seltags;
+ 	unsigned int sellt;
+ 	unsigned int tagset[2];
++	unsigned int colorfultag;
+ 	int showbar;
+ 	int topbar;
+ 	Client *clients;
+@@ -642,6 +646,7 @@ createmon(void)
+ 	m->nmaster = nmaster;
+ 	m->showbar = showbar;
+ 	m->topbar = topbar;
++   m->colorfultag = colorfultag ? colorfultag : 0;
+ 	m->lt[0] = &layouts[0];
+ 	m->lt[1] = &layouts[1 % LENGTH(layouts)];
+ 	strncpy(m->ltsymbol, layouts[0].symbol, sizeof m->ltsymbol);
+@@ -723,7 +728,14 @@ drawbar(Monitor *m)
+ 	x = 0;
+ 	for (i = 0; i < LENGTH(tags); i++) {
+ 		w = TEXTW(tags[i]);
+-		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
++       drw_setscheme(
++           drw,
++           scheme[
++               m->tagset[m->seltags] & 1 << i
++               ? (m->colorfultag ? tagschemes[i] : SchemeSel)
++               : SchemeTag
++           ]
++       );
+ 		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
+ 		if (occ & 1 << i)
+ 			drw_rect(drw, x + boxs, boxs, boxw, boxw,
+-- 
+2.36.1

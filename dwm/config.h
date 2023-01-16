@@ -7,6 +7,7 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "RobotoMono Nerd Font:size=10", "fontawesome:size=12" };
+static const unsigned int colorfultag = 1;        /* 0 means use SchemeSel for selected tag */
 static const char dmenufont[]       = "RobotoMono Nerd Font:size=10";
 static const char col_gray1[]       = "#0A0D0F";
 static const char col_gray2[]       = "#141719";
@@ -19,14 +20,42 @@ static const char col_pink[]        = "#ffc2df";
 //static const char col_white[]       = "#f8f8f2";
 static const char col_white[]       = "#ffe1e1";
 static const char col_purple[]       = "#bd93f9";
+//SAGA COLORSCHEME
+static const char col_lavpink[]       = "#ffaecb";
+static const char col_magenta[]       = "#ff9fbc";
+static const char col_peach[]       = "#ffc79b";
+static const char col_blond[]       = "#fff6c3";
+static const char col_methanol[]       = "#baf7b5";
+static const char col_celeste[]       = "#b2fff3";
+static const char col_mauve[]       = "#dfbaff";
+static const char col_lavender[]       = "#f3ceff";
+static const char col_snow[]       = "#fff6ff";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_white, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray3, col_cyan,  col_cyan  },
+
+    [SchemeTag]  = { col_white, col_gray1, NULL }, /* Inactive tag. */
+    [SchemeTag1] = { col_magenta, col_gray1,  NULL },
+    [SchemeTag2] = { col_peach, col_gray1,  NULL },
+    [SchemeTag3] = { col_blond, col_gray1,  NULL },
+    [SchemeTag4] = { col_methanol, col_gray1,  NULL },
+    [SchemeTag5] = { col_celeste, col_gray1,  NULL },
+    [SchemeTag6] = { col_mauve, col_gray1,  NULL },
+    [SchemeTag7] = { col_lavender, col_gray1,  NULL },
+    [SchemeTag8] = { col_lavpink, col_gray1,  NULL },
+    [SchemeTag9] = { col_snow, col_gray1,  NULL },
+    /* And so forth... */
 };
 
 /* tagging */
 static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九"};
+
+static const int  tagschemes[] = { SchemeTag1, SchemeTag2, SchemeTag3,SchemeTag4, SchemeTag5, SchemeTag6,SchemeTag7, SchemeTag8, SchemeTag9 };
+static const unsigned int ulinepad	= 2;	/* horizontal padding between the underline and tag */
+static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
+static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */
+static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -66,7 +95,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_white, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
-//static const char *termcmd[] = { "kitty", NULL};
+static const char *termcmd2[] = { "kitty", NULL};
 static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
 static const char *downvol[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
 
@@ -76,7 +105,7 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-    //{ MODKEY|Mod1Mask,              XK_Return, spawn,          {.v = termcmd2} },
+    { MODKEY|Mod1Mask,              XK_Return, spawn,          {.v = termcmd2} },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("firefox")},
     { MODKEY,                       XK_m,      spawn,          SHCMD("rofi -modi drun,run -show drun")},
     { MODKEY,                       XK_Print,  spawn,          SHCMD("flameshot gui")},	
