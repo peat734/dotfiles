@@ -39,35 +39,30 @@
 URxvt.intensityStyles:	false
 URxvt.background:       [90]#000000
 URxvt.depth:		32
-URxvt.font: 		xft:monospace:size=11
+!!URxvt.font: 		xft:monospace:size=12
+URxvt.font:         xft:RobotoMono Nerd Font:size=12
+!!URxvt.font: 	  xft:Sarasa Mono Sc Nerd:size=12
+!!URxvt.font:       xft:IBM Plex Mono:size=12
 URxvt.scrollBar:	false
 URxvt.cursorColor:	white
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.geometry: 92x24
+!URxvt.internalBorder: 24
+URxvt.internalBorder: 4
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.iso14755: false
 
-!! Extensions
-URxvt.perl-ext-common:	default,matcher,resize-font,url-select,keyboard-select
-URxvt.colorUL:		#4682B4
-!! url-select
-URxvt.keysym.M-u:	perl:url-select:select_next
-URxvt.url-select.launcher: webview
-URxvt.url-select.underline: true
-!! keyboard-select:
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-!! resize-font
-URxvt.resize-font.smaller:	C-Down
-URxvt.resize-font.bigger:	C-Up
-!! Matcher
-URxvt.url-launcher:	webview
-URxvt.matcher.button:	1
-
-rofi.color-enabled:	true
-rofi.color-window:	#000, #000, #000
-rofi.color-normal:	#111, #819396, #222, #008ed4, #ffffff
-rofi.color-active:	#002b37, #008ed4, #003643, #008ed4, #66c6ff
-rofi.color-urgent:	#002b37, #da4281, #003643, #008ed4, #890661
-
-rofi.fake-transparency:	true
-rofi.lines:		3
-rofi.bw:		0
-rofi.opacity:		"10"
-rofi.hide-scrollbar:	true
-rofi.width:		30
+!! URxvt Functions
+URxvt.perl-ext-common: default,font-size,selection-to-clipboard,pasta
+URxvt.keysym.Shift-Control-C:    perl:keyboard-select:activate
+!!URxvt.keysym.Shift-Control-V:    perl:pasta:paste
+URxvt.keysym.Shift-Control-V:    eval:paste_clipboard
+! Comment this if you don't want copy when text is selected
+URxvt.clipboard.autocopy: true
+URxvt.keysym.C-j:       perl:font-size:increase
+URxvt.keysym.C-k:       perl:font-size:decrease
