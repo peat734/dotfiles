@@ -1,43 +1,93 @@
-*foreground: #fff6ff
-*foreground_bold: #ffecff
-*cursor: #f3ceff
-*background:       #05080a
+!!*foreground: #fff6ff
+!!*foreground_bold: #ffecff
+!!*cursor: #f3ceff
+!!*background:       #05080a
 !!*background: rgba(0, 0, 0, .7)
 
 !! black
-*.color0:       #0A0D0F
-*.color8:       #0f1214
+!!*.color0:       #0A0D0F
+!!*.color8:       #0f1214
 
 !! red
-*.color1:       #ff9fbc
-*.color9:       #ffa4c1
+!!*.color1:       #ff9fbc
+!!*.color9:       #ffa4c1
 
 !! green
-*.color2:       #baf7b5
-*.color10:      #bffcba
+!!*.color2:       #baf7b5
+!!*.color10:      #bffcba
 
 !! yellow
-*.color3:       #ffc79b
-*.color11:      #ffcca0
+!!*.color3:       #ffc79b
+!!*.color11:      #ffcca0
 
 !! blue
-*.color4:       #b2fff3
-*.color12:      #b7fff8
+!!*.color4:       #b2fff3
+!!*.color12:      #b7fff8
 
 !! purple
-*.color5:       #dfbaff
-*.color13:      #e4bfff
+!!*.color5:       #dfbaff
+!!*.color13:      #e4bfff
 
 !! pink
-*.color6:       #ffc2df
-*.color14:      #ffc7e4
+!!*.color6:       #ffc2df
+!!*.color14:      #ffc7e4
 
 !! white
-*color7:        #fff6ff
-*color15:       #fffbff
+!!*color7:        #fff6ff
+!!*color15:       #fffbff
+
+
+! Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+! Copyright (c) 2016-present Sven Greb <code@svengreb.de>
+
+! Project:    Nord XResources
+! Version:    0.1.0
+! Repository: https://github.com/arcticicestudio/nord-xresources
+! License:    MIT
+
+#define nord0 #2E3440
+#define nord1 #3B4252
+#define nord2 #434C5E
+#define nord3 #4C566A
+#define nord4 #D8DEE9
+#define nord5 #E5E9F0
+#define nord6 #ECEFF4
+#define nord7 #8FBCBB
+#define nord8 #88C0D0
+#define nord9 #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
+
+*.foreground:   nord4
+*.background:   nord0
+*.cursorColor:  nord4
+!*fading: 35
+!*fadeColor: nord3
+
+*.color0: nord1
+*.color1: nord11
+*.color2: nord14
+*.color3: nord13
+*.color4: nord9
+*.color5: nord15
+*.color6: nord8
+*.color7: nord5
+*.color8: nord3
+*.color9: nord11
+*.color10: nord14
+*.color11: nord13
+*.color12: nord9
+*.color13: nord15
+*.color14: nord7
+*.color15: nord6
 
 URxvt.intensityStyles:	false
-URxvt.background:       [90]#000000
+!!URxvt.background:       [90]#000000
+URxvt.background:       [90]#2E3440
 URxvt.depth:		32
 !!URxvt.font: 		xft:monospace:size=12
 URxvt.font:         xft:RobotoMono Nerd Font:size=12
@@ -62,7 +112,7 @@ URxvt.perl-ext-common: default,font-size,selection-to-clipboard,pasta
 URxvt.keysym.Shift-Control-C:    perl:keyboard-select:activate
 !!URxvt.keysym.Shift-Control-V:    perl:pasta:paste
 URxvt.keysym.Shift-Control-V:    eval:paste_clipboard
-! Comment this if you don't want copy when text is selected
+! Comment this if you dont want copy when text is selected
 URxvt.clipboard.autocopy: true
 URxvt.keysym.C-j:       perl:font-size:increase
 URxvt.keysym.C-k:       perl:font-size:decrease
