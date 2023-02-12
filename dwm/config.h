@@ -30,21 +30,36 @@ static const char col_celeste[]       = "#b2fff3";
 static const char col_mauve[]       = "#dfbaff";
 static const char col_lavender[]       = "#f3ceff";
 static const char col_snow[]       = "#fff6ff";
+//NORD COLORSCHEME
+static const char col_nordback1[]       = "#2e3440";
+static const char col_nordback2[]       = "#3b4252";
+static const char col_nordback3[]       = "#434c5e";
+static const char col_nordback4[]       = "#4c566a";
+static const char col_nordwhite[]       = "#eceff4";
+static const char col_nordfrost1[]       = "#8fbcbb";
+static const char col_nordfrost2[]       = "#88c0d0";
+static const char col_nordfrost3[]       = "#81a1c1";
+static const char col_nordaurora1[]       = "#bf616a";
+static const char col_nordaurora2[]       = "#d08770";
+static const char col_nordaurora3[]       = "#ebcb8b";
+static const char col_nordaurora4[]       = "#a3be8c";
+static const char col_nordaurora5[]       = "#b48ead";
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_white, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray3, col_cyan,  col_cyan  },
+	[SchemeNorm] = { col_nordwhite, col_nordback1, col_nordback2 },
+	[SchemeSel]  = { col_nordback3, col_nordfrost2,  col_nordfrost1  },
 
-    [SchemeTag]  = { col_white, col_gray1, NULL }, /* Inactive tag. */
-    [SchemeTag1] = { col_magenta, col_gray1,  NULL },
-    [SchemeTag2] = { col_peach, col_gray1,  NULL },
-    [SchemeTag3] = { col_blond, col_gray1,  NULL },
-    [SchemeTag4] = { col_methanol, col_gray1,  NULL },
-    [SchemeTag5] = { col_celeste, col_gray1,  NULL },
-    [SchemeTag6] = { col_mauve, col_gray1,  NULL },
-    [SchemeTag7] = { col_lavender, col_gray1,  NULL },
-    [SchemeTag8] = { col_lavpink, col_gray1,  NULL },
-    [SchemeTag9] = { col_snow, col_gray1,  NULL },
+    [SchemeTag]  = { col_nordwhite, col_nordback1, NULL }, /* Inactive tag. */
+    [SchemeTag1] = { col_nordaurora1, col_nordback1,  NULL },
+    [SchemeTag2] = { col_nordaurora2, col_nordback1,  NULL },
+    [SchemeTag3] = { col_nordaurora3, col_nordback1,  NULL },
+    [SchemeTag4] = { col_nordaurora4, col_nordback1,  NULL },
+    [SchemeTag5] = { col_nordaurora5, col_nordback1,  NULL },
+    [SchemeTag6] = { col_nordfrost1, col_nordback1,  NULL },
+    [SchemeTag7] = { col_nordfrost2, col_nordback1,  NULL },
+    [SchemeTag8] = { col_nordfrost3, col_nordback1,  NULL },
+    [SchemeTag9] = { col_nordwhite, col_nordback1,  NULL },
     /* And so forth... */
 };
 
@@ -93,7 +108,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_white, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_nordback1, "-nf", col_nordwhite, "-sb", col_nordfrost2, "-sf", col_nordback4, NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
 static const char *termcmd2[] = { "kitty", NULL};
 static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
