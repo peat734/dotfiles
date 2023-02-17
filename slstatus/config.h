@@ -65,10 +65,10 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function format          argument */
  // { vol_perc, "VOL:%2S| ",            "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
-  { run_command, "^c#bf616a^VOL:%2s | ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" }, 
+  { run_command, "^c#f38ba8^VOL:%2s | ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" }, 
  // { ipv6,        "^c#ffb86c^WIFI:%2s%% | ",          "wlp2s0"},
-  { cpu_perc,    "^c#ebcb8b^CPU:%2s%% | ",          "NULL" },
-  { ram_perc,    "^c#a3be8c^RAM:%2s%% | ",          "NULL" },
-  { battery_perc, "^c#88c0d0^BAT:%2s%% | ",          "BAT0" },
-  { datetime, "^c#b48ead^%s",           "%a %d/%m/%y %R" },
+  { cpu_perc,    "^c#f9e2af^CPU:%2s%% | ",          "NULL" },
+  { ram_perc,    "^c#a6e3a1^RAM:%2s%% | ",          "NULL" },
+  { battery_perc, "^c#94e2d5^BAT:%2s%% | ",          "BAT0" },
+  { datetime, "^c#cba6f7^%s",           "%a %d/%m/%y %R" },
 };
