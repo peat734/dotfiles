@@ -13,53 +13,77 @@ static const char col_gray1[]       = "#0A0D0F";
 static const char col_gray2[]       = "#141719";
 static const char col_gray3[]       = "#0f1214";
 static const char col_gray4[]       = "#1F1F28";
-static const char col_cyan[]        = "#b2fff3";
-static const char col_red[]         = "#e78c8c";
+//static const char col_cyan[]        = "#b2fff3";
+//static const char col_red[]         = "#e78c8c";
 //static const char col_pink[]        = "#E46876";
-static const char col_pink[]        = "#ffc2df";
+//static const char col_pink[]        = "#ffc2df";
 //static const char col_white[]       = "#f8f8f2";
-static const char col_white[]       = "#ffe1e1";
-static const char col_purple[]       = "#bd93f9";
+//static const char col_white[]       = "#ffe1e1";
+//static const char col_purple[]       = "#bd93f9";
 //SAGA COLORSCHEME
-static const char col_lavpink[]       = "#ffaecb";
-static const char col_magenta[]       = "#ff9fbc";
-static const char col_peach[]       = "#ffc79b";
-static const char col_blond[]       = "#fff6c3";
-static const char col_methanol[]       = "#baf7b5";
-static const char col_celeste[]       = "#b2fff3";
-static const char col_mauve[]       = "#dfbaff";
-static const char col_lavender[]       = "#f3ceff";
-static const char col_snow[]       = "#fff6ff";
+//static const char col_lavpink[]       = "#ffaecb";
+//static const char col_magenta[]       = "#ff9fbc";
+//static const char col_peach[]       = "#ffc79b";
+//static const char col_blond[]       = "#fff6c3";
+//static const char col_methanol[]       = "#baf7b5";
+//static const char col_celeste[]       = "#b2fff3";
+//static const char col_mauve[]       = "#dfbaff";
+//static const char col_lavender[]       = "#f3ceff";
+//static const char col_snow[]       = "#fff6ff";
 //NORD COLORSCHEME
-static const char col_nordback1[]       = "#2e3440";
-static const char col_nordback2[]       = "#3b4252";
-static const char col_nordback3[]       = "#434c5e";
-static const char col_nordback4[]       = "#4c566a";
-static const char col_nordwhite[]       = "#eceff4";
-static const char col_nordfrost1[]       = "#8fbcbb";
-static const char col_nordfrost2[]       = "#88c0d0";
-static const char col_nordfrost3[]       = "#81a1c1";
-static const char col_nordaurora1[]       = "#bf616a";
-static const char col_nordaurora2[]       = "#d08770";
-static const char col_nordaurora3[]       = "#ebcb8b";
-static const char col_nordaurora4[]       = "#a3be8c";
-static const char col_nordaurora5[]       = "#b48ead";
+//static const char col_nordback1[]       = "#2e3440";
+//static const char col_nordback2[]       = "#3b4252";
+//static const char col_nordback3[]       = "#434c5e";
+//static const char col_nordback4[]       = "#4c566a";
+//static const char col_nordwhite[]       = "#eceff4";
+//static const char col_nordfrost1[]       = "#8fbcbb";
+//static const char col_nordfrost2[]       = "#88c0d0";
+//static const char col_nordfrost3[]       = "#81a1c1";
+//static const char col_nordaurora1[]       = "#bf616a";
+//static const char col_nordaurora2[]       = "#d08770";
+//static const char col_nordaurora3[]       = "#ebcb8b";
+//static const char col_nordaurora4[]       = "#a3be8c";
+//static const char col_nordaurora5[]       = "#b48ead";
+
+//catppuccin mocha COLORSCHEME
+static const char col_base[]       = "#1e1e2e";
+static const char col_crust[]       = "#11111b";
+static const char col_surface0[]       = "#313244";
+static const char col_surface1[]       = "#45475a";
+static const char col_surface2[]       = "#585b70";
+static const char col_text[]       = "#cdd6f4";
+static const char col_subtext[]       = "#bac2de";
+static const char col_rosewater[]       = "#f5e0dc";
+static const char col_flamingo[]       = "#f2cdcd";
+static const char col_pink[]       = "#f5c2e7";
+static const char col_mauve[]       = "#cba6f7";
+static const char col_red[]       = "#f38ba8";
+static const char col_maroon[]       = "#eba0ac";
+static const char col_peach[]       = "#fab387";
+static const char col_yellow[]       = "#f9e2af";
+static const char col_green[]       = "#a6e3a1";
+static const char col_teal[]       = "#94e2d5";
+static const char col_sky[]       = "#89dceb";
+static const char col_sapphire[]       = "#74c7ec";
+static const char col_blue[]       = "#89b4fa";
+static const char col_lavender[]       = "#b4befe";
+
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_nordwhite, col_nordback1, col_nordback2 },
-	[SchemeSel]  = { col_nordback3, col_nordfrost2,  col_nordfrost1  },
+	[SchemeNorm] = { col_text, col_base, col_surface0 },
+	[SchemeSel]  = { col_crust, col_green,  col_green},
 
-    [SchemeTag]  = { col_nordwhite, col_nordback1, NULL }, /* Inactive tag. */
-    [SchemeTag1] = { col_nordaurora1, col_nordback1,  NULL },
-    [SchemeTag2] = { col_nordaurora2, col_nordback1,  NULL },
-    [SchemeTag3] = { col_nordaurora3, col_nordback1,  NULL },
-    [SchemeTag4] = { col_nordaurora4, col_nordback1,  NULL },
-    [SchemeTag5] = { col_nordaurora5, col_nordback1,  NULL },
-    [SchemeTag6] = { col_nordfrost1, col_nordback1,  NULL },
-    [SchemeTag7] = { col_nordfrost2, col_nordback1,  NULL },
-    [SchemeTag8] = { col_nordfrost3, col_nordback1,  NULL },
-    [SchemeTag9] = { col_nordwhite, col_nordback1,  NULL },
+    [SchemeTag]  = { col_text, col_base, NULL }, /* Inactive tag. */
+    [SchemeTag1] = { col_pink, col_base,  NULL },
+    [SchemeTag2] = { col_mauve, col_base,  NULL },
+    [SchemeTag3] = { col_red, col_base,  NULL },
+    [SchemeTag4] = { col_peach, col_base,  NULL },
+    [SchemeTag5] = { col_yellow, col_base,  NULL },
+    [SchemeTag6] = { col_green, col_base,  NULL },
+    [SchemeTag7] = { col_teal, col_base,  NULL },
+    [SchemeTag8] = { col_sapphire, col_base,  NULL },
+    [SchemeTag9] = { col_lavender, col_base,  NULL },
     /* And so forth... */
 };
 
@@ -108,7 +132,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_nordback1, "-nf", col_nordwhite, "-sb", col_nordfrost2, "-sf", col_nordback4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_base, "-nf", col_text, "-sb", col_green, "-sf", col_teal, NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
 static const char *termcmd2[] = { "kitty", NULL};
 static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
