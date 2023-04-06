@@ -1,2 +1,2 @@
 # dotfiles
-These are my dotfiles for dwm
+These are my dotfiles for dwm and bspwm
