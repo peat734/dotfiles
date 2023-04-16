@@ -14,3 +14,4 @@ These are my dotfiles for dwm and bspwm
 - **Icons**: [Papirus-Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - **Font**: [Sarasa Mono CL Nerd Font](https://github.com/jonz94/Sarasa-Gothic-Nerd-Fonts)
 - **Editor**: [Neovim with nvchad](https://nvchad.com/)
+- **Music Player**: [ncmpcpp](https://github.com/ncmpcpp/ncmpcpp)
