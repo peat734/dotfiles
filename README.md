@@ -1,6 +1,6 @@
 # dotfiles
 These are my dotfiles for dwm and bspwm
-![Rice](./screenshots/reis.png)
+![Rice](./screenshots/rice.png)
 
 **STUFF THAT I USE**:
 
