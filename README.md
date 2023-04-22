@@ -4,7 +4,7 @@ These are my dotfiles for dwm and bspwm
 
 **STUFF THAT I USE**:
 
-- **OS**: [Fedora 37](https://getfedora.org/)
+- **OS**: [Fedora 38](https://getfedora.org/)
 - **WM**: [BSPWM](https://github.com/baskerville/bspwm)
 - **Terminal**: [Alacritty](https://github.com/alacritty/alacritty)
 - **Shell**: [ZSH](https://github.com/ohmyzsh/ohmyzsh)
