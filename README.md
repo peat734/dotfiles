@@ -1,6 +1,6 @@
 # dotfiles
 These are my dotfiles for dwm and bspwm
-![Rice](./screenshots/rice2.png)
+![Rice](./screenshots/fedora38.png)
 
 **STUFF THAT I USE**:
 
