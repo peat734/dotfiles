@@ -9,9 +9,10 @@
 
 ##---------- Keybindings for bspwm ----------##
 
-# Terminal (kitty)
+# Terminal (alacritty)
 super + Return
-	urxvt
+	alacritty
+    #urxvt
 
 # Terminal (floating)
 super + shift + Return
@@ -21,7 +22,10 @@ super + shift + Return
 # Open application menu
 super + m
     sh $HOME/.config/rofi/scripts/appsmenu.sh
-	#rofi -modi drun,run -show drun  
+	#rofi -modi drun,run -show drun 
+#alt tab
+alt + Tab 
+    rofi -show window
 
 
 # Toggle eww dashboard
