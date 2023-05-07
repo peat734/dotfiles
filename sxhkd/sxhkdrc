@@ -47,14 +47,14 @@ ctrl + alt + l
 ##---------- Applications ----------##
 
 # Launch Apps
-super + shift + {f,w,e,d,s}
-	{thunar,firefox,code,discord,spotify}
+super + shift + {f,w,e,d,}
+	{thunar,firefox,code,discord}
 
 ##---------- System Keys ----------##
 
 # Take a screenshot
 Print
-	flameshot gui
+	flameshot full -c
 	#sh $HOME/.local/bin/takeshot --now
 		
 
@@ -71,8 +71,9 @@ ctrl + Print
 	sh $HOME/.local/bin/takeshot --win
 
 # Take screenshot of area
-alt + Print
-	sh $HOME/.local/bin/takeshot --area
+super + shift + s
+    flameshot gui
+#	sh $HOME/.local/bin/takeshot --area
 
 # Manage brightness
 XF86MonBrightness{Up,Down}
