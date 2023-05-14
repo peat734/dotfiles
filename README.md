@@ -6,7 +6,7 @@ These are my dotfiles for dwm and bspwm
 
 - **OS**: [Fedora 38](https://getfedora.org/)
 - **WM**: [BSPWM](https://github.com/baskerville/bspwm)
-- **Terminal**: [Alacritty](https://github.com/alacritty/alacritty)
+- **Terminal**: [Alacritty](https://github.com/alacritty/alacritty) / [kitty](https://sw.kovidgoyal.net/kitty/)
 - **Shell**: [ZSH](https://github.com/ohmyzsh/ohmyzsh)
 - **Compositor**: [Picom](https://github.com/ibhagwan/picom)
 - **Application Launcher**: [Rofi](https://github.com/davatorium/rofi)
