@@ -4,6 +4,7 @@
 ~/.fehbg
 pgrep -x sxhkd > /dev/null || sxhkd &
 $HOME/.config/polybar/launch.sh
+#$HOME/.config/eww/bar/launch.sh
 
 workspaces() {
 	name=1
@@ -19,9 +20,9 @@ bspc config border_width         3
 bspc config window_gap           10
 bspc config split_ratio          0.50
 
-bspc config focused_border_color "#a6e3a1"
+bspc config focused_border_color "#a7c080"
 bspc config normal_border_color "#1e1e2e"
-bspc config active_border_color "#f38ba8"
+bspc config active_border_color "#e67e80"
 
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
@@ -56,7 +57,8 @@ for i in ${office[@]}; do
 ## Autostart
 
 # Kill if already running
-killall -9 picom sxhkd dunst xfce4-power-manager ksuperkey eww
+killall -9 picom sxhkd dunst xfce4-power-manager ksuperkey eww oneko 
+
 
 # Launch Conkeww
 #sed -i "s/colors\/color-.*/colors\/color-tokyo.yuck\")/g" $HOME/.config/conkeww/eww.yuck
@@ -88,10 +90,9 @@ picom --config $HOME/.config/picom/picom.conf &
 mpd &
 
 #start asus rog control center
-rog-control-center
+rog-control-center &
 
-#start oneko
-oneko
+oneko &
 
 # replace neovim colorscheme
 #sed -i "s/theme =.*$/theme = \"pastelDark\",/g" $HOME/.config/nvim/lua/custom/chadrc.lua
